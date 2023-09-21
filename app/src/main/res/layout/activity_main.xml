@@ -6,13 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/buttonASCII"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Conversión ASCII"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalcular"
+        app:layout_constraintEnd_toEndOf="@+id/buttonCalcular"
+        app:layout_constraintStart_toStartOf="@+id/buttonCalcular"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Potencia de un valor"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMatchText"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMatchText"
+        app:layout_constraintStart_toStartOf="@+id/buttonMatchText"
+        app:layout_constraintTop_toBottomOf="@+id/buttonASCII" />
+
+    <Button
+        android:id="@+id/buttonMatchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comparar textos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcular" />
 </androidx.constraintlayout.widget.ConstraintLayout>
