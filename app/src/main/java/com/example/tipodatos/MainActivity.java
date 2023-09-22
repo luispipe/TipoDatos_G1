@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
         Button botonPotencia= findViewById(R.id.buttonCalcular);
         Button botonMatchText= findViewById(R.id.buttonMatchText);
 
+        //Intent es un elemento que nos permite realizar acciones entre componentes(Activitys y Fragments)
         Intent ascii= new Intent(getApplicationContext(), AsciiActivity.class);
         Intent potencia= new Intent(getApplicationContext(), PotenciaActivity.class);
-        Intent matchText= new Intent(getApplicationContext(), MainActivity.class);
+        Intent matchText= new Intent(getApplicationContext(), MatchTextActivity.class);
 
         botonAscii.setOnClickListener(new View.OnClickListener() {
             @Override
