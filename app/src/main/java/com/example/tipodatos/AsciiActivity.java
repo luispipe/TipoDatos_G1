@@ -3,6 +3,7 @@ package com.example.tipodatos;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 public class AsciiActivity extends AppCompatActivity {
     //Global
     Button btnConvertir;
+    String textoChar;
     EditText etxChar, etxAscii;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,8 @@ public class AsciiActivity extends AppCompatActivity {
         * */
 
         //El metodo toString es el metodo principal de los Object, y lo que hace es convertirlo a String
-        String textoChar= etxChar.getText().toString();
+
+        Editable textoChar1= etxChar.getText();
 
         btnConvertir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +47,14 @@ public class AsciiActivity extends AppCompatActivity {
                 // el tamaño de los textos inicia desde 0 hasta n-1
                 // Hola Mundo -> 0->H 1->o 2->l 3->a 4->_ 5->M 6->u 7->n 8->d 9->0
                 // .length = (n=10)-1= 9
+                textoChar= etxChar.getText().toString();
 
-                if (textoChar.length()==1){
-                    char caracter= textoChar.charAt(0);
+                if (textoChar1.length()==1){
+                    char caracter= textoChar1.charAt(0);
                     int ascii= (int)caracter;
                     etxAscii.setText(ascii+"");
                 }else {
+                    //Mensaje emergente
                     Toast.makeText(getApplicationContext(),
                             "Se requiere que solo sea un 1 carácter",Toast.LENGTH_LONG).show();
                 }
